@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.js": "/static/js/main.bf725938.chunk.js",
-    "main.js.map": "/static/js/main.bf725938.chunk.js.map",
-    "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
-    "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
-    "static/js/2.381688b9.chunk.js": "/static/js/2.381688b9.chunk.js",
-    "static/js/2.381688b9.chunk.js.map": "/static/js/2.381688b9.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.cfae46b236b90b2576adb3a5bdc0766e.js": "/precache-manifest.cfae46b236b90b2576adb3a5bdc0766e.js",
-    "service-worker.js": "/service-worker.js"
+    "main.js": "/react-dnd-target-example/static/js/main.17cdf1eb.chunk.js",
+    "main.js.map": "/react-dnd-target-example/static/js/main.17cdf1eb.chunk.js.map",
+    "runtime~main.js": "/react-dnd-target-example/static/js/runtime~main.b8d8d481.js",
+    "runtime~main.js.map": "/react-dnd-target-example/static/js/runtime~main.b8d8d481.js.map",
+    "static/js/2.381688b9.chunk.js": "/react-dnd-target-example/static/js/2.381688b9.chunk.js",
+    "static/js/2.381688b9.chunk.js.map": "/react-dnd-target-example/static/js/2.381688b9.chunk.js.map",
+    "index.html": "/react-dnd-target-example/index.html",
+    "precache-manifest.a1d1145d3f2190576caad77270292681.js": "/react-dnd-target-example/precache-manifest.a1d1145d3f2190576caad77270292681.js",
+    "service-worker.js": "/react-dnd-target-example/service-worker.js"
   }
 }
