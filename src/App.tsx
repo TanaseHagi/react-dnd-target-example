@@ -8,7 +8,11 @@ const App: FC = () => {
     const [logs, setLogs] = useState<string[]>([]);
 
     const onChange = ({ dragSource, dropTarget }: ChangeEvent) => {
-        setLogs([...logs, `dropped ${dragSource.type} into ${dropTarget.type}`])
+        if (dropTarget == null) {
+            setLogs([...logs, `did not drop ${dragSource.type} on any target`])
+            return;
+        }
+        setLogs([...logs, `dropped ${dragSource.type} on ${dropTarget.type}`]);
     }
 
     return (
@@ -34,7 +38,7 @@ const App: FC = () => {
                 />
             </div>
             <div style={{ clear: "both" }}>
-                {logs.map(log => <div key={log} style={{ padding: "5px 0" }}>{log}</div>)}
+                {logs.map((log, i) => <div key={i} style={{ padding: "5px 0" }}>{log}</div>)}
             </div>
         </DndProvider>
     );

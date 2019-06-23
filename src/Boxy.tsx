@@ -19,7 +19,7 @@ const style: React.CSSProperties = {
 
 export interface ChangeEvent {
     dragSource: BoxyBox;
-    dropTarget: BoxyBox;
+    dropTarget?: BoxyBox;
 }
 
 export interface BoxProps {
@@ -42,7 +42,12 @@ export const Boxy: React.FC<BoxProps> = ({ name, type, accept, onChange }) => {
 
     const [{ opacity }, drag] = useDrag({
         item,
-        end(dropResult: BoxyBox | undefined, monitor: DragSourceMonitor) { },
+        end(dropResult: BoxyBox | undefined, monitor: DragSourceMonitor) {
+            if (!monitor.didDrop()) {
+                typeof onChange === "function" && onChange({dragSource: item});
+            }
+            // console.log("drag end", dropResult, monitor);
+        },
         collect: (monitor: any) => ({
             opacity: monitor.isDragging() ? 0.4 : 1
         })
@@ -53,6 +58,7 @@ export const Boxy: React.FC<BoxProps> = ({ name, type, accept, onChange }) => {
         drop: (dragObject: BoxyBox /* DragObjectWithType */, monitor: DropTargetMonitor) => {
             // console.log();
             typeof onChange === "function" && onChange({dragSource: dragObject, dropTarget: item});
+            // console.log("drop", dragObject, monitor);
         },
         canDrop: (dragObject: BoxyBox /* DragObjectWithType */, monitor: DropTargetMonitor) => {
             if (item.type === dragObject.type) return false;
